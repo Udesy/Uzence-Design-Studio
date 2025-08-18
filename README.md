@@ -281,13 +281,6 @@ Visit `http://localhost:6006` to explore components, their props, and usage exam
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🆘 Support
-
-For questions, issues, or contributions:
-- Create an issue on GitHub
-- Check existing documentation
-- Review component examples in Storybook
-
 ---
 
-**Built with ❤️ by Uzence Design Studio**
+**Built with ❤️ by Uddeshya Prajapati**
