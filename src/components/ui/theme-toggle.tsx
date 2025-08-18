@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Moon, Sun, Monitor } from 'lucide-react';
 import { useTheme } from '../../hooks/use-theme';
 import { Button } from '../ui/button';
