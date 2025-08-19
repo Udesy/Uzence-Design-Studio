@@ -1,0 +1,44 @@
+name: 'Chromatic Deployment'
+
+# Trigger the action on push to main branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  chromatic-deployment:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required for Chromatic to work properly
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build Storybook
+        run: npm run build-storybook
+      
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          # GitHub token for authentication
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # Chromatic project token (set this in your repo secrets)
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          # Don't fail the build if there are visual changes
+          exitZeroOnChanges: true
+          # Upload the built storybook
+          storybookBuildDir: storybook-static

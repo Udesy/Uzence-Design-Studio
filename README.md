@@ -51,6 +51,8 @@ Navigate to `http://localhost:5174` to see the component demo.
 | `npm run lint` | Run ESLint for code quality |
 | `npm run storybook` | Start Storybook development server |
 | `npm run build-storybook` | Build Storybook for deployment |
+| `npm run screenshots` | Generate component screenshots with Storycap |
+| `npm run screenshots:build` | Generate screenshots from built Storybook |
 
 ## 🧩 Components
 
@@ -60,6 +62,14 @@ Professional input component with multiple variants and features:
 - **Sizes**: `sm`, `md`, `lg`
 - **States**: `loading`, `disabled`, `error`
 - **Features**: Password toggle, clear button, helper text
+
+**[→ View InputField Stories](https://main--68a3d71292ba31a29325b31c.chromatic.com/?path=/story/ui-components-inputfield--default)**
+
+<div align="center">
+<img src="screenshots/UI Components/InputField/Outlined.png" alt="InputField Outlined" width="300"/>
+<img src="screenshots/UI Components/InputField/Filled.png" alt="InputField Filled" width="300"/>
+<img src="screenshots/UI Components/InputField/Ghost.png" alt="InputField Ghost" width="300"/>
+</div>
 
 ```tsx
 <InputField
@@ -80,6 +90,13 @@ Feature-rich data table with sorting and selection:
 - **Loading and empty states**
 - **Responsive design**
 
+**[→ View DataTable Stories](https://main--68a3d71292ba31a29325b31c.chromatic.com/?path=/story/ui-components-datatable--default)**
+
+<div align="center">
+<img src="screenshots/UI Components/DataTable/Default.png" alt="DataTable Default" width="400"/>
+<img src="screenshots/UI Components/DataTable/With Selection.png" alt="DataTable With Selection" width="400"/>
+</div>
+
 ```tsx
 <DataTable
   data={users}
@@ -91,9 +108,19 @@ Feature-rich data table with sorting and selection:
 ```
 
 ### Button
-Versatile button component with multiple variants:
+Versatile button component with multiple variants and smooth animations:
 - **Variants**: `default`, `destructive`, `outline`, `secondary`, `ghost`, `link`
 - **Sizes**: `default`, `sm`, `lg`, `icon`
+- **Features**: Hover lift effects, active scale, smooth transitions
+
+**[→ View Button Stories](https://main--68a3d71292ba31a29325b31c.chromatic.com/?path=/story/example-button--primary)**
+
+<div align="center">
+<img src="screenshots/Example/Button/Primary.png" alt="Button Primary" width="200"/>
+<img src="screenshots/Example/Button/Secondary.png" alt="Button Secondary" width="200"/>
+<img src="screenshots/Example/Button/Large.png" alt="Button Large" width="200"/>
+<img src="screenshots/Example/Button/Small.png" alt="Button Small" width="200"/>
+</div>
 
 ```tsx
 <Button variant="default" size="md">
@@ -102,18 +129,25 @@ Versatile button component with multiple variants:
 ```
 
 ### Badge
-Status and category indicators:
-- **Variants**: `default`, `secondary`, `destructive`, `outline`
+Status and category indicators with hover animations:
+- **Variants**: `default`, `secondary`, `destructive`, `outline`, `success`, `warning`
+- **Features**: Hover scale effects, shadow animations
+
+**[→ View Badge Stories](https://main--68a3d71292ba31a29325b31c.chromatic.com/?path=/story/ui-components-badge--default)**
 
 ```tsx
-<Badge variant="default">Active</Badge>
+<Badge variant="success">Active</Badge>
+<Badge variant="warning">Pending</Badge>
 ```
 
 ### ThemeToggle
-Theme switching component with dropdown:
+Theme switching component with dropdown and animations:
 - Light, dark, and system theme options
-- Smooth transitions
+- Smooth transitions with rotation effects
 - Persistent theme preference
+- Icon scaling on hover
+
+**[→ View Theme Toggle in Action](https://main--68a3d71292ba31a29325b31c.chromatic.com/)**
 
 ```tsx
 <ThemeToggle />
@@ -261,6 +295,7 @@ function MyComponent() {
 
 ## 📚 Storybook
 
+### Local Development
 Access component documentation and interactive examples:
 
 ```bash
@@ -268,6 +303,16 @@ npm run storybook
 ```
 
 Visit `http://localhost:6006` to explore components, their props, and usage examples.
+
+### 🌐 Live Preview
+
+**🚀 [View Live Storybook →](https://main--68a3d71292ba31a29325b31c.chromatic.com/)**
+
+Explore all components interactively with live examples, props documentation, and theme switching.
+
+**Deploy Options:**
+- **Chromatic**: `npm run deploy:chromatic` (Recommended for teams)
+- **Vercel**: `npm run deploy:vercel` (Fast and simple)
 
 ## 🤝 Contributing
 

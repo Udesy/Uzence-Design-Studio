@@ -27,10 +27,10 @@ export function ThemeToggle({ className, variant = 'ghost', size = 'icon' }: The
         <Button
           variant={variant}
           size={size}
-          className={cn('transition-all duration-200', className)}
+          className={cn('transition-all duration-300 hover:rotate-12 active:scale-95', className)}
           aria-label="Toggle theme"
         >
-          <ThemeIcon className="h-4 w-4 transition-all duration-200" />
+          <ThemeIcon className="h-4 w-4 transition-all duration-300 hover:scale-110" />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
@@ -98,13 +98,13 @@ export function SimpleThemeToggle({ className }: { className?: string }) {
       variant="ghost"
       size="icon"
       onClick={toggleTheme}
-      className={cn('transition-all duration-200', className)}
+      className={cn('transition-all duration-300 hover:rotate-12 active:scale-95', className)}
       aria-label={`Switch to ${actualTheme === 'dark' ? 'light' : 'dark'} theme`}
     >
       {actualTheme === 'dark' ? (
-        <Sun className="h-4 w-4 transition-all duration-200" />
+        <Sun className="h-4 w-4 transition-all duration-300 hover:scale-110" />
       ) : (
-        <Moon className="h-4 w-4 transition-all duration-200" />
+        <Moon className="h-4 w-4 transition-all duration-300 hover:scale-110" />
       )}
       <span className="sr-only">Toggle theme</span>
     </Button>

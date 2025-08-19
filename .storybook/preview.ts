@@ -33,12 +33,14 @@ const preview: Preview = {
       const { backgrounds } = context.globals;
       const isDark = backgrounds?.value === 'hsl(215 28% 17%)';
       
-      return (
-        <div className={`min-h-screen p-4 ${isDark ? 'dark' : ''}`}>
-          <div className="bg-background text-foreground min-h-full">
-            <Story />
-          </div>
-        </div>
+      return React.createElement(
+        'div',
+        { className: `min-h-screen p-4 ${isDark ? 'dark' : ''}` },
+        React.createElement(
+          'div',
+          { className: 'bg-background text-foreground min-h-full' },
+          React.createElement(Story)
+        )
       );
     },
   ],

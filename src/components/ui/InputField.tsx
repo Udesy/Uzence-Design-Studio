@@ -4,21 +4,21 @@ import { cn } from '../../lib/utils';
 import { Eye, EyeOff, X, Loader2 } from 'lucide-react';
 
 const inputFieldVariants = cva(
-    "flex h-10 w-full rounded-md px-3 py-2 text-sm text-foreground transition-all duration-200 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+    "flex h-10 w-full rounded-md px-3 py-2 text-sm text-foreground transition-all duration-300 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 focus:scale-[1.02] focus:shadow-md",
     {
       variants: {
         variant: {
-          filled: "bg-muted border border-transparent hover:bg-muted focus-visible:bg-background focus-visible:border-primary focus-visible:ring",
-          outlined: "border border-border bg-background hover:border-border-hover focus-visible:border-primary focus-visible:ring-ring",
-          ghost: "border-0 bg-transparent hover:bg-muted/50 focus-visible:bg-muted focus-visible:ring-ring",
+          filled: "bg-muted border border-transparent hover:bg-muted/80 hover:shadow-sm focus-visible:bg-background focus-visible:border-primary focus-visible:ring-primary/20",
+          outlined: "border border-border bg-background hover:border-primary/50 hover:shadow-sm focus-visible:border-primary focus-visible:ring-primary/20 focus-visible:shadow-lg",
+          ghost: "border-0 bg-transparent hover:bg-muted/50 hover:shadow-sm focus-visible:bg-muted focus-visible:ring-primary/20",
         },
         size: {
-          sm: "h-8 px-2 py-1 text-xs",
+          sm: "h-8 px-2 py-1 text-xs rounded-sm",
           md: "h-10 px-3 py-2 text-sm",
-          lg: "h-12 px-4 py-3 text-base",
+          lg: "h-12 px-4 py-3 text-base rounded-lg",
         },
         invalid: {
-          true: "border-red-500 focus-visible:border-red-500 focus-visible:ring-red-500",
+          true: "border-red-500 focus-visible:border-red-500 focus-visible:ring-red-500/20 hover:border-red-400",
           false: "",
         },
       },
